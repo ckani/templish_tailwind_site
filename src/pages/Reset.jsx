@@ -3,13 +3,14 @@ export default function Reset() {
   return (
     <div className="bg-white text-gray-800 font-sans">
       {/* Hero Section */}
-      <section className="bg-gray-50 py-12 px-4 text-center">
-        <div className="max-w-3xl mx-auto">
+      <section className="bg-gradient-to-b from-green-50 to-white py-16 px-4 text-center relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-24 bg-[url('https://www.svgrepo.com/show/382191/wave-top.svg')] bg-no-repeat bg-cover rotate-180 opacity-20"></div>
+        <div className="max-w-3xl mx-auto relative z-10">
           <img
             src="/logo.png"
             alt="Templish Logo"
             className="mx-auto mb-6"
-            style={{ maxWidth: '120px' }}
+            style={{ maxWidth: '130px' }}
           />
           <h1 className="text-4xl font-bold mb-4">✨ Start Your Faith + Food Reset</h1>
           <p className="text-lg text-gray-600">
@@ -19,20 +20,20 @@ export default function Reset() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-12 px-4">
+      <section className="py-12 px-4 bg-white relative z-10">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-semibold mb-6 text-center">What You’ll Receive</h2>
           <ul className="space-y-4 text-left list-disc list-inside text-gray-700">
-            <li>✨ Daily inspiration rooted in Scripture</li>
-            <li>🌿 <span className="font-semibold text-green-700">Faith-based habits</span> for spiritual wellness</li>
-            <li>🥗 Whole-food, plant-based nutrition guidance</li>
+            <li className="transition hover:translate-x-1">✨ Daily inspiration rooted in Scripture</li>
+            <li className="transition hover:translate-x-1">🌿 <span className="font-semibold text-green-700">Faith-based habits</span> for spiritual wellness</li>
+            <li className="transition hover:translate-x-1">🥗 Whole-food, plant-based nutrition guidance</li>
           </ul>
         </div>
       </section>
 
       {/* Form Section */}
-      <section className="bg-green-50 py-12 px-4">
-        <div className="max-w-md mx-auto bg-white shadow-md rounded p-6">
+      <section className="bg-green-50 py-14 px-4">
+        <div className="max-w-md mx-auto bg-white shadow-xl rounded p-6">
           <h3 className="text-xl font-bold mb-4 text-center">Join the Reset</h3>
           <form
             action="https://assets.mailerlite.com/jsonp/1658042/forms/159804880877257870/subscribe"
@@ -67,7 +68,7 @@ export default function Reset() {
       </section>
 
       {/* Scripture Block */}
-      <section className="py-10 px-4 text-center italic text-gray-700">
+      <section className="py-10 px-4 text-center italic text-gray-700 bg-white">
         <p>✝️ “Beloved, I pray that you may prosper in all things and be in health, just as your soul prospers.”</p>
         <p className="text-sm mt-2">– 3 John 1:2</p>
       </section>
