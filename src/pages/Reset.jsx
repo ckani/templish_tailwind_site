@@ -10,7 +10,7 @@ export default function Reset() {
             src="/logo.png"
             alt="Templish Logo"
             className="mx-auto mb-6"
-            style={{ maxWidth: '160px' }}
+            style={{ maxWidth: '200px' }}
           />
           <h1 className="text-4xl font-bold mb-4">✨ Start Your Faith + Food Reset</h1>
           <p className="text-lg text-gray-600">
