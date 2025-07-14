@@ -30,7 +30,7 @@ export default function Reset() {
 
       <blockquote className="italic text-center text-gray-600 my-10">
         ✝️ “Beloved, I pray that you may prosper in all things and be in health, just as your soul prospers.”<br />
-        <span className="text-sm"> – 3 John 1:2</span>
+        <span className="text-sm">– 3 John 1:2</span>
       </blockquote>
 
       <footer className="text-center border-t pt-4 text-sm text-gray-500">
