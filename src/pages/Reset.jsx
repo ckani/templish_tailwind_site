@@ -1,75 +1,80 @@
 
 export default function Reset() {
   return (
-    <div className="max-w-3xl mx-auto p-6 font-sans text-gray-800">
-      <header className="text-center mb-10">
-        <h1 className="text-4xl font-bold mb-4">✨ Start Your Faith + Food Reset</h1>
-        <p className="text-lg text-gray-600">
-          Scripture, WFPB wellness tips, and simple daily habits to nourish your body and soul.
-        </p>
-      </header>
-
-      <section className="mb-10">
-        <h2 className="text-2xl font-semibold mb-4">What you'll receive:</h2>
-        <ul className="list-disc pl-5 space-y-2 text-gray-700">
-          <li>Daily inspiration rooted in Scripture</li>
-          <li><span className="font-semibold text-green-700">Faith-based habits</span> for spiritual wellness</li>
-          <li>Whole-food, plant-based nutrition guidance</li>
-        </ul>
-      </section>
-
-      <section className="mb-10">
-        <div className="bg-gray-50 p-6 rounded shadow-md">
-          <div dangerouslySetInnerHTML={{ __html: `
-            <div id="mlb2-28330058" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-28330058">
-              <div class="ml-form-align-center ">
-                <div class="ml-form-embedWrapper embedForm">
-                  <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                    <div class="ml-form-embedContent">
-                      <h4>✨ Start Your Faith + Food Reset</h4>
-                      <p>Enter your email below to get instant access to the 7-day reset — filled with Scripture, WFPB wellness tips, and simple daily habits.</p>
-                    </div>
-                    <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1658042/forms/159804880877257870/subscribe" method="post" target="_blank">
-                      <div class="ml-form-formContent">
-                        <div class="ml-form-fieldRow">
-                          <div class="ml-field-group ml-field-name">
-                            <input aria-label="name" type="text" class="form-control" name="fields[name]" placeholder="Name" autocomplete="given-name" />
-                          </div>
-                        </div>
-                        <div class="ml-form-fieldRow ml-last-item">
-                          <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                            <input aria-label="email" aria-required="true" type="email" class="form-control" name="fields[email]" placeholder="Email" autocomplete="email" />
-                          </div>
-                        </div>
-                      </div>
-                      <input type="hidden" name="ml-submit" value="1" />
-                      <div class="ml-form-embedSubmit">
-                        <button type="submit" class="primary">Send Me the Reset</button>
-                      </div>
-                      <input type="hidden" name="anticsrf" value="true" />
-                    </form>
-                  </div>
-                  <div class="ml-form-successBody row-success" style="display: none">
-                    <div class="ml-form-successContent">
-                      <h4>Thank you!</h4>
-                      <p>You have successfully joined our subscriber list.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <script src="https://groot.mailerlite.com/js/w/webforms.min.js" type="text/javascript"></script>
-          `}} />
+    <div className="bg-white text-gray-800 font-sans">
+      {/* Hero Section */}
+      <section className="bg-gray-50 py-12 px-4 text-center">
+        <div className="max-w-3xl mx-auto">
+          <img
+            src="/logo.png"
+            alt="Templish Logo"
+            className="mx-auto mb-6"
+            style={{ maxWidth: '120px' }}
+          />
+          <h1 className="text-4xl font-bold mb-4">✨ Start Your Faith + Food Reset</h1>
+          <p className="text-lg text-gray-600">
+            A free 7-day journey to nourish your body and soul with Scripture, WFPB tips, and spiritual habits.
+          </p>
         </div>
       </section>
 
-      <blockquote className="italic text-center text-gray-600 my-10">
-        ✝️ “Beloved, I pray that you may prosper in all things and be in health, just as your soul prospers.”<br />
-        <span className="text-sm">– 3 John 1:2</span>
-      </blockquote>
+      {/* Benefits Section */}
+      <section className="py-12 px-4">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-2xl font-semibold mb-6 text-center">What You’ll Receive</h2>
+          <ul className="space-y-4 text-left list-disc list-inside text-gray-700">
+            <li>✨ Daily inspiration rooted in Scripture</li>
+            <li>🌿 <span className="font-semibold text-green-700">Faith-based habits</span> for spiritual wellness</li>
+            <li>🥗 Whole-food, plant-based nutrition guidance</li>
+          </ul>
+        </div>
+      </section>
 
-      <footer className="text-center border-t pt-4 text-sm text-gray-500">
-        Explore more faith-based wellness tools at <a href="/reset" className="text-gray-700 underline">templish.com/reset</a>
+      {/* Form Section */}
+      <section className="bg-green-50 py-12 px-4">
+        <div className="max-w-md mx-auto bg-white shadow-md rounded p-6">
+          <h3 className="text-xl font-bold mb-4 text-center">Join the Reset</h3>
+          <form
+            action="https://assets.mailerlite.com/jsonp/1658042/forms/159804880877257870/subscribe"
+            method="post"
+            target="_blank"
+            className="space-y-4"
+          >
+            <input
+              type="text"
+              name="fields[name]"
+              placeholder="Your name"
+              className="w-full border rounded px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400"
+              required
+            />
+            <input
+              type="email"
+              name="fields[email]"
+              placeholder="Your email"
+              className="w-full border rounded px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400"
+              required
+            />
+            <input type="hidden" name="ml-submit" value="1" />
+            <input type="hidden" name="anticsrf" value="true" />
+            <button
+              type="submit"
+              className="w-full bg-green-700 text-white py-3 rounded font-semibold hover:bg-green-800 transition"
+            >
+              Send Me the Reset
+            </button>
+          </form>
+        </div>
+      </section>
+
+      {/* Scripture Block */}
+      <section className="py-10 px-4 text-center italic text-gray-700">
+        <p>✝️ “Beloved, I pray that you may prosper in all things and be in health, just as your soul prospers.”</p>
+        <p className="text-sm mt-2">– 3 John 1:2</p>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-100 text-center py-4 text-sm text-gray-600 border-t">
+        Explore more faith-based wellness tools at <a href="/reset" className="text-gray-800 underline">templish.com/reset</a>
       </footer>
     </div>
   );
