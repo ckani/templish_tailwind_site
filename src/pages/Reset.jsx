@@ -35,12 +35,26 @@ export default function Reset() {
       <section className="bg-green-50 py-14 px-4">
         <div className="max-w-md mx-auto bg-white shadow-xl rounded p-6">
           <h3 className="text-xl font-bold mb-4 text-center">Join the Reset</h3>
-          <form
-            action="https://assets.mailerlite.com/jsonp/1658042/forms/159804880877257870/subscribe"
-            method="post"
-            target="_blank"
-            className="space-y-4"
-          >
+          import { useEffect } from 'react';
+
+export default function ResetPage() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://assets.mailerlite.com/js/universal.js';
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
+  return (
+    <div className="reset-page">
+      <h1 className="text-2xl font-bold text-center mb-6">7-Day Faith + Food Reset</h1>
+
+      {/* Embed container */}
+      <div className="ml-embedded" data-form="159804880877257870"></div>
+    </div>
+  );
+}
+
             <input
               type="text"
               name="fields[name]"
