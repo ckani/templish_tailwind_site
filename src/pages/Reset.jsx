@@ -1,5 +1,13 @@
+import { useEffect } from 'react';
 
 export default function Reset() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://assets.mailerlite.com/js/universal.js';
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   return (
     <div className="bg-white text-gray-800 font-sans">
       {/* Hero Section */}
@@ -33,29 +41,11 @@ export default function Reset() {
 
       {/* Form Section */}
       <section className="bg-green-50 py-14 px-4">
-        <div className="max-w-md mx-auto bg-white shadow-xl rounded p-6">
-          <h3 className="text-xl font-bold mb-4 text-center">Join the Reset</h3>
-          import { useEffect } from 'react';
+        <div className="max-w-md mx-auto bg-white shadow-xl rounded p-6 text-center">
+          <h3 className="text-xl font-bold mb-4">Join the Reset</h3>
 
-export default function ResetPage() {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://assets.mailerlite.com/js/universal.js';
-    script.async = true;
-    document.body.appendChild(script);
-  }, []);
-
-  return (
-    <div className="reset-page max-w-xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-4">7-Day Faith + Food Reset</h1>
-      <p className="text-center mb-8">Sign up below to receive your free guide.</p>
-
-      {/* ✅ Only this — nothing else */}
-      <div className="ml-embedded" data-form="159804880877257870"></div>
-    </div>
-  );
-}
-
+          {/* ✅ This is all you need */}
+          <div className="ml-embedded" data-form="159804880877257870"></div>
         </div>
       </section>
 
