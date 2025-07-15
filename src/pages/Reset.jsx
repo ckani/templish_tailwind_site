@@ -968,21 +968,36 @@ export default function Reset() {
 
   
   
-  <script>
-    function ml_webform_success_28330058() {
-      var $ = ml_jQuery || jQuery;
-      $('.ml-subscribe-form-28330058 .row-success').show();
-      $('.ml-subscribe-form-28330058 .row-form').hide();
-    }
-      </script>
-  
-  
-      <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
-        <script>
-            fetch("https://assets.mailerlite.com/jsonp/1658042/forms/159804880877257870/takel")
-        </script>
-        </div>
+  export default function Reset() {
+  const mailerLiteForm = `
+    <!-- BEGIN MailerLite Embed -->
+    <div id="mlb2-28330058" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-28330058">
+      <!-- All the MailerLite embed HTML you copied here -->
+    </div>
+    <script>
+      function ml_webform_success_28330058() {
+        var $ = ml_jQuery || jQuery;
+        $('.ml-subscribe-form-28330058 .row-success').show();
+        $('.ml-subscribe-form-28330058 .row-form').hide();
+      }
+    </script>
+    <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+    <!-- END MailerLite Embed -->
+  `;
+
+  return (
+    <div className="...">
+      {/* Other page sections above */}
+      <section className="bg-green-50 py-14 px-4">
+        <div
+          className="max-w-md mx-auto bg-white shadow-xl rounded p-6 text-center"
+          dangerouslySetInnerHTML={{ __html: mailerLiteForm }}
+        />
       </section>
+      {/* Remaining sections below */}
+    </div>
+  );
+}
 
       {/* Scripture Block */}
       <section className="py-10 px-4 text-center italic text-gray-700 bg-white">
