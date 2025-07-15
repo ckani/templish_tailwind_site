@@ -40,16 +40,12 @@ export default function Reset() {
       </section>
 
       {/* Form Section */}
-export default function Reset() {
-  return (
-    <section className="py-14 px-4 bg-green-50">
-      <div className="max-w-md mx-auto bg-white shadow-xl rounded p-6 text-center">
-        <h3 className="text-xl font-bold mb-4">Join the Reset</h3>
-        <div className="ml-embedded" data-form="7tv1ij"></div>
-      </div>
-    </section>
-  );
-}
+      <section className="py-14 px-4 bg-green-50">
+        <div className="max-w-md mx-auto bg-white shadow-xl rounded p-6 text-center">
+          <h3 className="text-xl font-bold mb-4">Join the Reset</h3>
+          <div className="ml-embedded" data-form="7tv1ij"></div>
+        </div>
+      </section>
 
       {/* Scripture Block */}
       <section className="py-10 px-4 text-center italic text-gray-700 bg-white">
