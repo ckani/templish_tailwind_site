@@ -1,10 +1,10 @@
 export default function Reset() {
 const mailerLiteEmbed = `
   <form
-  action="https://assets.mailerlite.com/jsonp/1658042/forms/159804880877257870/subscribe"
-  method="post"
-  target="_self"
->
+    id="templish-form"
+    action="https://assets.mailerlite.com/jsonp/1658042/forms/159804880877257870/subscribe"
+    method="post"
+  >
     <input
       type="text"
       name="fields[name]"
@@ -26,6 +26,24 @@ const mailerLiteEmbed = `
       Get the Reset
     </button>
   </form>
+
+  <script>
+    const form = document.getElementById('templish-form');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const query = new URLSearchParams(formData).toString();
+      fetch(form.action + '?' + query)
+        .then(res => res.json())
+        .then(data => {
+          if (data.success) {
+            window.location.href = '/reset/thank-you';
+          } else {
+            alert('Something went wrong. Please try again.');
+          }
+        });
+    });
+  </script>
 `;
   return (
     <div className="bg-white text-gray-800 font-sans">
