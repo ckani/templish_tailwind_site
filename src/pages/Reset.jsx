@@ -1,12 +1,32 @@
-import { useEffect } from 'react';
-
 export default function Reset() {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://assets.mailerlite.com/js/universal.js';
-    script.async = true;
-    document.body.appendChild(script);
-  }, []);
+  const mailerLiteEmbed = `
+    <form
+      action="https://assets.mailerlite.com/jsonp/1658042/forms/159804880877257870/subscribe"
+      method="post"
+      target="_blank"
+    >
+      <input
+        type="text"
+        name="fields[name]"
+        placeholder="Your name"
+        required
+        style="display:block;width:100%;padding:12px;margin-bottom:12px;border:1px solid #ccc;border-radius:4px;"
+      />
+      <input
+        type="email"
+        name="fields[email]"
+        placeholder="Your email"
+        required
+        style="display:block;width:100%;padding:12px;margin-bottom:12px;border:1px solid #ccc;border-radius:4px;"
+      />
+      <button
+        type="submit"
+        style="background:#A3B18A;color:white;padding:12px 20px;border:none;border-radius:4px;cursor:pointer;width:100%;"
+      >
+        Get the Reset
+      </button>
+    </form>
+  `;
 
   return (
     <div className="bg-white text-gray-800 font-sans">
@@ -43,7 +63,7 @@ export default function Reset() {
       <section className="py-14 px-4 bg-green-50">
         <div className="max-w-md mx-auto bg-white shadow-xl rounded p-6 text-center">
           <h3 className="text-xl font-bold mb-4">Join the Reset</h3>
-          <div className="ml-embedded" data-form="7tv1ij"></div>
+          <div dangerouslySetInnerHTML={{ __html: mailerLiteEmbed }} />
         </div>
       </section>
 
