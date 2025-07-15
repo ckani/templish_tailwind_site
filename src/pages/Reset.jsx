@@ -1,45 +1,62 @@
-export default function Reset() {
-const mailerLiteEmbed = `
-  <form id="templish-form" action="https://assets.mailerlite.com/jsonp/1658042/forms/159804880877257870/subscribe" method="post">
-    <input type="text" name="fields[name]" placeholder="Your name" required
-      style="display:block;width:100%;padding:12px;margin-bottom:12px;border:1px solid #ccc;border-radius:4px;" />
-    <input type="email" name="fields[email]" placeholder="Your email" required
-      style="display:block;width:100%;padding:12px;margin-bottom:12px;border:1px solid #ccc;border-radius:4px;" />
-    <button type="submit"
-      style="background:#A3B18A;color:white;padding:12px 20px;border:none;border-radius:4px;cursor:pointer;width:100%;">
-      Get the Reset
-    </button>
-  </form>
-`;
-<div dangerouslySetInnerHTML={{ __html: mailerLiteEmbed }} />
 import { useEffect } from 'react';
 
-useEffect(() => {
-  const form = document.getElementById('templish-form');
-  if (!form) return;
+export default function Reset() {
+  useEffect(() => {
+    const form = document.getElementById('templish-form');
+    if (!form) return;
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
+    const handleSubmit = (e) => {
+      e.preventDefault();
 
-    const formData = new FormData(form);
-    const query = new URLSearchParams(formData).toString();
+      const formData = new FormData(form);
+      const query = new URLSearchParams(formData).toString();
 
-    fetch(form.action + '?' + query)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.success) {
-          window.location.href = '/reset/thank-you';
-        } else {
-          alert('Something went wrong. Please try again.');
-        }
-      });
-  });
+      fetch(form.action + '?' + query)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success) {
+            window.location.href = '/reset/thank-you';
+          } else {
+            alert('Something went wrong. Please try again.');
+          }
+        })
+        .catch(() => {
+          alert('Submission failed. Please check your connection.');
+        });
+    };
 
-  // Optional: cleanup the event listener
-  return () => {
-    form.removeEventListener('submit', () => {});
-  };
-}, []);
+    form.addEventListener('submit', handleSubmit);
+
+    // Clean up listener on unmount
+    return () => {
+      form.removeEventListener('submit', handleSubmit);
+    };
+  }, []);
+
+  const mailerLiteEmbed = `
+    <form id="templish-form" action="https://assets.mailerlite.com/jsonp/1658042/forms/159804880877257870/subscribe" method="post">
+      <input
+        type="text"
+        name="fields[name]"
+        placeholder="Your name"
+        required
+        style="display:block;width:100%;padding:12px;margin-bottom:12px;border:1px solid #ccc;border-radius:4px;"
+      />
+      <input
+        type="email"
+        name="fields[email]"
+        placeholder="Your email"
+        required
+        style="display:block;width:100%;padding:12px;margin-bottom:12px;border:1px solid #ccc;border-radius:4px;"
+      />
+      <button
+        type="submit"
+        style="background:#A3B18A;color:white;padding:12px 20px;border:none;border-radius:4px;cursor:pointer;width:100%;"
+      >
+        Get the Reset
+      </button>
+    </form>
+  `;
 
   return (
     <div className="bg-white text-gray-800 font-sans">
@@ -73,7 +90,7 @@ useEffect(() => {
       </section>
 
       {/* Form Section */}
-      <section className="py-14 px-4 bg-green-50">
+      <section className="bg-green-50 py-14 px-4">
         <div className="max-w-md mx-auto bg-white shadow-xl rounded p-6 text-center">
           <h3 className="text-xl font-bold mb-4">Join the Reset</h3>
           <div dangerouslySetInnerHTML={{ __html: mailerLiteEmbed }} />
