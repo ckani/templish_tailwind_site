@@ -40,62 +40,29 @@ export default function Reset() {
       </section>
 
       {/* Form Section */}
-<section className="bg-green-50 py-14 px-4">
-  <div
-    className="max-w-md mx-auto bg-white shadow-xl rounded p-6 text-center"
-    dangerouslySetInnerHTML={{
-      __html: `
-        <!-- BEGIN MailerLite Embed -->
-        <div id="mlb2-28330058" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-28330058">
-          <div class="ml-form-align-center">
-            <div class="ml-form-embedWrapper embedForm">
-              <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                <div class="ml-form-embedContent">
-                  <h4>✨ Start Your Faith + Food Reset</h4>
-                  <p>Enter your email below to get instant access to the 7-day reset — filled with Scripture, WFPB wellness tips, and simple daily habits.</p>
-                </div>
-                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1658042/forms/159804880877257870/subscribe" method="post" target="_blank">
-                  <div class="ml-form-formContent">
-                    <div class="ml-form-fieldRow">
-                      <div class="ml-field-group ml-field-name">
-                        <input type="text" class="form-control" name="fields[name]" placeholder="Name" autocomplete="given-name" />
-                      </div>
-                    </div>
-                    <div class="ml-form-fieldRow ml-last-item">
-                      <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                        <input type="email" class="form-control" name="fields[email]" placeholder="Email" autocomplete="email" required />
-                      </div>
-                    </div>
-                  </div>
-                  <input type="hidden" name="ml-submit" value="1" />
-                  <div class="ml-form-embedSubmit">
-                    <button type="submit" class="primary">Send Me the Reset</button>
-                  </div>
-                  <input type="hidden" name="anticsrf" value="true" />
-                </form>
-              </div>
-              <div class="ml-form-successBody row-success" style="display: none;">
-                <div class="ml-form-successContent">
-                  <h4>Welcome to the Reset!</h4>
-                  <p>📩 Your welcome email is on its way — be sure to check your inbox (and your spam or promotions folder).</p>
-                </div>
-              </div>
-            </div>
-          </div>
+import { useEffect } from 'react';
+
+export default function Reset() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://assets.mailerlite.com/js/universal.js';
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
+  return (
+    <div className="bg-white text-gray-800 font-sans">
+      {/* ... other sections ... */}
+      <section className="bg-green-50 py-14 px-4">
+        <div className="max-w-md mx-auto bg-white shadow-xl rounded p-6 text-center">
+          <h3 className="text-xl font-bold mb-4">Join the Reset</h3>
+          <div className="ml-embedded" data-form="159804880877257870"></div>
         </div>
-        <script>
-          function ml_webform_success_28330058() {
-            var $ = ml_jQuery || jQuery;
-            $('.ml-subscribe-form-28330058 .row-success').show();
-            $('.ml-subscribe-form-28330058 .row-form').hide();
-          }
-        </script>
-        <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
-        <!-- END MailerLite Embed -->
-      `,
-    }}
-  />
-</section>
+      </section>
+      {/* ... other sections ... */}
+    </div>
+  );
+}
 
 
       {/* Scripture Block */}
