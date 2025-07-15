@@ -1,10 +1,10 @@
 export default function Reset() {
 const mailerLiteEmbed = `
   <form
-    action="https://assets.mailerlite.com/jsonp/1658042/forms/159804880877257870/subscribe"
-    method="post"
-    onsubmit="window.location.href='/reset/thank-you'; return false;"
-  >
+  action="https://assets.mailerlite.com/jsonp/1658042/forms/159804880877257870/subscribe"
+  method="post"
+  target="_self"
+>
     <input
       type="text"
       name="fields[name]"
