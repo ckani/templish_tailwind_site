@@ -46,38 +46,16 @@ export default function ResetPage() {
   }, []);
 
   return (
-    <div className="reset-page">
-      <h1 className="text-2xl font-bold text-center mb-6">7-Day Faith + Food Reset</h1>
+    <div className="reset-page max-w-xl mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold text-center mb-4">7-Day Faith + Food Reset</h1>
+      <p className="text-center mb-8">Sign up below to receive your free guide.</p>
 
-      {/* Embed container */}
+      {/* ✅ Only this — nothing else */}
       <div className="ml-embedded" data-form="159804880877257870"></div>
     </div>
   );
 }
 
-            <input
-              type="text"
-              name="fields[name]"
-              placeholder="Your name"
-              className="w-full border rounded px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400"
-              required
-            />
-            <input
-              type="email"
-              name="fields[email]"
-              placeholder="Your email"
-              className="w-full border rounded px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-400"
-              required
-            />
-            <input type="hidden" name="ml-submit" value="1" />
-            <input type="hidden" name="anticsrf" value="true" />
-            <button
-              type="submit"
-              className="w-full bg-green-700 text-white py-3 rounded font-semibold hover:bg-green-800 transition"
-            >
-              Send Me the Reset
-            </button>
-          </form>
         </div>
       </section>
 
