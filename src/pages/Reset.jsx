@@ -40,30 +40,14 @@ export default function Reset() {
       </section>
 
       {/* Form Section */}
-import { useEffect } from 'react';
-
-export default function Reset() {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://assets.mailerlite.com/js/universal.js';
-    script.async = true;
-    document.body.appendChild(script);
-  }, []);
-
-  return (
-    <div className="bg-white text-gray-800 font-sans">
-      {/* ... other sections ... */}
       <section className="bg-green-50 py-14 px-4">
         <div className="max-w-md mx-auto bg-white shadow-xl rounded p-6 text-center">
           <h3 className="text-xl font-bold mb-4">Join the Reset</h3>
-          <div className="ml-embedded" data-form="159804880877257870"></div>
+
+          {/* ✅ MailerLite Form Embed */}
+          <div className="ml-embedded" data-form="7tv1ij"></div>
         </div>
       </section>
-      {/* ... other sections ... */}
-    </div>
-  );
-}
-
 
       {/* Scripture Block */}
       <section className="py-10 px-4 text-center italic text-gray-700 bg-white">
